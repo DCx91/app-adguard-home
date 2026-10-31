@@ -30,6 +30,7 @@ hassio_api: true
 hassio_role: manager
 map:
   - ssl
+  - app_config
 options:
   ssl: true
   certfile: fullchain.pem
@@ -42,5 +43,6 @@ schema:
   leave_front_door_open: bool?
   safebrowsing_block_host: str?
   parental_block_host: str?
+  manual_edit: bool?
 backup_exclude:
   - "*/adguard/data/querylog.*"
