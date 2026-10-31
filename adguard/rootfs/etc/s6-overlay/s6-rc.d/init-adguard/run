@@ -5,7 +5,7 @@
 # Home Assistant Community App: AdGuard Home
 # Handles configuration
 # ==============================================================================
-readonly CONFIG="/data/adguard/AdGuardHome.yaml"
+readonly CONFIG="/config/adguard/AdGuardHome.yaml"
 readonly CONFIG_BACKUP="${CONFIG}.bak"
 readonly NETWORK_WAIT_SECONDS=300
 readonly NETWORK_POLL_SECONDS=5
@@ -27,7 +27,7 @@ function config_is_valid() {
 }
 
 if ! bashio::fs.file_exists "${CONFIG}"; then
-    mkdir -p /data/adguard
+    mkdir -p /config/adguard
     cp /etc/adguard/AdGuardHome.yaml "${CONFIG}"
 fi
 
